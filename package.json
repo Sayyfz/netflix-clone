@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "commit": "git commit -a -m 'negligible update for testing'",
+    "push": "git push origin main"
   },
   "dependencies": {
+    "axios": "1.2.1",
     "next": "13.0.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",

@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {
-        movies.map(movie => <p>{movie.title}</p>)
+        movies.map(movie => <p key={movie.id}>{movie.title}</p>)
       }
     </div>
   )

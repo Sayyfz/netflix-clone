@@ -11,19 +11,12 @@ export default function Home() {
     timeout: 1000,
     headers: {'X-Custom-Header': 'foobar'}
     });
-    
+
   sendRequest = (title) => {
 
 
-    const req = axios.get("https://movie-database-imdb-alternative.p.rapidapi.com/");
-    req.headers({
-      "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
-      "x-rapidapi-key": "6aedc604ebmsh33ab3d38b68088dp1cb9d4jsna8b0115acb3e"
-    });
-    req.end(function (res) {
-      if (res.error) throw new Error(res.error);
-      console.log(res.body);
-    });
+    // const res = axios.get("https://movie-database-imdb-alternative.p.rapidapi.com/");
+    
   }
 
   useEffect(() => {

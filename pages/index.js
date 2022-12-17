@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import requests from '../utils/requests'
-import Banner from '../components/Banner';
-import styles from '../styles/Home.module.css'
-import axios from 'axios'
+import Banner from '../components/Banner.jsx';
+import styles from '../styles/Home.module.css';
+import axios from 'axios';
 
 export default function Home({ netflixOriginals }) {
   

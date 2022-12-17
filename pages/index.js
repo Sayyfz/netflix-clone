@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import requests from '../utils/requests'
-import axios from 'axios'
+import Banner from '../components/Banner';
 import styles from '../styles/Home.module.css'
+import axios from 'axios'
 
-export default function Home({ netflixOriginals = {}}) {
+export default function Home({ netflixOriginals }) {
   
-  useEffect(() => {
-  })
+
 
   return (
     <div className={styles.container}>
-     
+      <Banner netflixOriginals={netflixOriginals} />
     </div>
   )
 };

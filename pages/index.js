@@ -1,16 +1,11 @@
 import { useEffect, useState } from 'react';
+import requests from '../utils/requests'
 import axios from 'axios'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({ netflixOriginals = {}}) {
   
-  const fetchApi = async () => {
-    const res = await axios.get('https://api.themoviedb.org/3/movie/550?api_key=e875efbf3b720a58b15b1ecd9738f915');
-    console.log(res.data);
-  }
-
   useEffect(() => {
-    fetchApi();
   })
 
   return (
@@ -18,4 +13,58 @@ export default function Home() {
      
     </div>
   )
-}
+};
+
+export const getServerSideProps = async () => {
+  
+  const [
+    netflixOriginals,
+    trendingNow,
+    topRated,
+    actionMovies,
+    comedyMovies,
+    horrorMovies,
+    romanceMovies,
+    documentaries,
+  ] = await Promise.all([
+    axios.get(requests.fetchNetflixOriginals, { 
+      headers: { "Accept-Encoding": "gzip,deflate,compress" } 
+  }),
+    axios.get(requests.fetchTrending, { 
+      headers: { "Accept-Encoding": "gzip,deflate,compress" } 
+  } ),
+    axios.get(requests.fetchTopRated, { 
+      headers: { "Accept-Encoding": "gzip,deflate,compress" } 
+  }),
+    axios.get(requests.fetchActionMovies, { 
+      headers: { "Accept-Encoding": "gzip,deflate,compress" } 
+  }),
+    axios.get(requests.fetchComedyMovies, { 
+      headers: { "Accept-Encoding": "gzip,deflate,compress" } 
+  }),
+    axios.get(requests.fetchHorrorMovies, { 
+      headers: { "Accept-Encoding": "gzip,deflate,compress" } 
+  }),
+    axios.get(requests.fetchRomanceMovies, { 
+      headers: { "Accept-Encoding": "gzip,deflate,compress" } 
+  }),
+    axios.get(requests.fetchDocumentaries, { 
+      headers: { "Accept-Encoding": "gzip,deflate,compress" } 
+  }),
+  ]);
+
+ 
+  return {
+    props: {
+      netflixOriginals: netflixOriginals.data.results,
+      trendingNow: trendingNow.data.results,
+      topRated: topRated.data.results,
+      actionMovies: actionMovies.data.results,
+      comedyMovies: comedyMovies.data.results,
+      horrorMovies: horrorMovies.data.results,
+      romanceMovies: romanceMovies.data.results,
+      documentaries: documentaries.data.results,
+    }
+  }
+
+};

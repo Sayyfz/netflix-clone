@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import styles from '../styles/Banner.module.scss'
 
 const Banner = ({ netflixOriginals }) => {
     const [movie, setMovie] = useState(null);
@@ -14,8 +14,8 @@ const Banner = ({ netflixOriginals }) => {
     }, [movie])
 
     return (  
-        <header>
-            
+        <header className={styles.banner}>
+            This is banner
         </header>
     );
 }

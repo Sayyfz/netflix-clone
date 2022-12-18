@@ -1,7 +1,8 @@
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/globals.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../styles/globals.scss'
 
 
 function MyApp({ Component, pageProps }) {

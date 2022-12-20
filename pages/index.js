@@ -9,7 +9,7 @@ export default function Home({ netflixOriginals }) {
 
 
   return (
-    <div className={styles.container}>
+    <div >
       <Banner netflixOriginals={netflixOriginals} />
     </div>
   )

@@ -4,8 +4,8 @@ import { SearchIcon, BellIcon  } from '@heroicons/react/solid';
 const Header = () => {
     return (  
 
-        <nav className={`navbar navbar-expand-md navbar-light bg-light ${styles.navbar}`}>
-        <div className={`  container-fluid ${styles.navbarContainer} mx-md-5`}>
+        <nav className={`mcontainer navbar navbar-expand-md navbar-light w-100 ${styles.navbar}`}>
+        <div className={`  container-fluid ${styles.navbarContainer}`}>
             <a className={`navbar-brand ${styles.navbarBrand}`} href="#">
                 <img src="https://rb.gy/ulxxee" />
             </a>

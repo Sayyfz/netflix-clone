@@ -1,0 +1,30 @@
+@import "variables.scss";
+
+.navbar {
+    background-color: transparent !important;
+    position: absolute!important;
+}
+
+.navbarBrand {
+    img {
+        max-width: 100px;
+    }
+}
+
+
+
+.navIcons {
+
+}
+
+@media (max-width: 768px) {
+    .navbarNav {
+        background-color: $clr-secondary;
+    }
+    .navbarContainer {
+        justify-content:flex-start!important;
+    }
+    .navbarToggler {
+
+    }
+}

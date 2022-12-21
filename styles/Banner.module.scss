@@ -1,0 +1,86 @@
+@import "helpers.scss";
+
+
+.banner {
+    @include grid-center;
+    height: 100vh;
+}
+
+.bannerImg {
+    z-index: -100;
+    opacity: 0.5;
+}
+
+.bannerItems {
+    padding-right: clamp(4rem, 50rem, 40%);
+}
+
+.bannerMovieInfo {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    // display: none;
+}
+
+.bannerMovieRatingIcon {
+    color: rgb(158, 6, 6);
+}
+
+.bannerMovieRating {
+
+}
+
+.bannerMovieDate {
+
+}
+
+.bannerMovieTitle {
+    letter-spacing: 4px;
+    font-weight: 700;
+    padding-right: 3rem;
+}
+
+
+.bannerMovieOverview {
+
+}
+
+.bannerBtns {
+    gap: 1rem;
+}
+
+.bannerPlayBtn {
+
+}
+
+.bannerMoreBtn {
+    
+}
+
+@media (min-width: 768px) {
+    .bannerItems {
+        padding-right: 40%;
+        padding-bottom: 10vmin;
+    }
+
+    .bannerMovieTitle {
+        padding-right: 10%;
+        font-size: 3rem;
+    }
+    
+    .bannerMovieOverview {
+        font-size: 1.125rem;
+    }
+
+   
+}
+
+@media (min-width: 1200px) {
+    .bannerMovieTitle {
+        font-size: 4.5rem;
+    }
+    
+    .bannerMovieOverview {
+        font-size: 1.5rem;
+    }
+}

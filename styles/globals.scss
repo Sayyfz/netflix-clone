@@ -6,6 +6,7 @@ svg {
   height: 26px;
 }
 
+
 // Sizing
 
 @for $i from 1 through 10 {
@@ -64,6 +65,7 @@ svg {
 }
 
 .mbtn {
+  min-width: fit-content;
   padding: 0.375rem 1.25rem;
   display: flex;
   gap: .5rem;

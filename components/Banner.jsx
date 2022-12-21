@@ -15,7 +15,7 @@ const Banner = ({ netflixOriginals }) => {
     }, [bannerMovie])
 
     return (  
-    <header className={styles.banner}>
+    <main className={`${styles.banner} position-relative`}>
         <img className={`${styles.bannerImg} position-absolute h-100 w-100`} 
             src={`https://via.placeholder.com/2000`} 
             alt="" 
@@ -43,7 +43,7 @@ const Banner = ({ netflixOriginals }) => {
             </div>
         </div>
 
-    </header>
+    </main>
     );
 }
  

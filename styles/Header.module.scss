@@ -1,8 +1,11 @@
 @import "variables.scss";
 
+.header { background-color: transparent; height: fit-content; transition: 0.3s ease; height: 60px; z-index: 100;}
+.headerScrolled { background-color: black; }
+
 .navbar {
-    background-color: transparent !important;
-    position: absolute!important;
+    background-color: transparent;
+    transition: 0.3s ease ;
 }
 
 .navbarBrand {
@@ -11,10 +14,33 @@
     }
 }
 
+.navbarContainer {
+    position: relative;
+}
+
+
+
+.navbarNav {
+    a {
+        font-size: 0.875rem;
+        color: rgb(229, 229, 229);
+        transition: 0.3s ease;
+        &.active {
+            color: white!important;
+        }
+
+        &:hover {
+            color: rgb(179 179 179);
+        }
+    }
+}
 
 
 .navIcons {
-
+    display: flex;
+    gap: 15px;
+    right: 0;
+    top: 7px;
 }
 
 @media (max-width: 768px) {
@@ -23,6 +49,19 @@
     }
     .navbarContainer {
         justify-content:flex-start!important;
+    }
+    .navbarCollapse {
+        position: absolute;
+        top: 51px;
+        left: 0;
+        border: 1px solid gray;
+    }
+    .navbarNav {
+        a {
+            width: 18rem;
+            text-align: center;
+            padding: 13px 0;
+        }
     }
     .navbarToggler {
 

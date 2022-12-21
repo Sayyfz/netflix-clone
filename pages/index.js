@@ -9,7 +9,7 @@ export default function Home({ netflixOriginals }) {
 
 
   return (
-    <div >
+    <div className={` ${styles.homeWrapper}`}>
       <Banner netflixOriginals={netflixOriginals} />
     </div>
   )

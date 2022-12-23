@@ -122,7 +122,20 @@ svg {
 
 
 
-
+.navLinks {
+  @mixin link-clicked {
+    font-weight: bold;
+    color: white!important;
+  }
+  a {
+      &.active {
+        @include link-clicked();
+      }
+      &:focus {
+        color:white;
+      }
+  }
+}
 
 
 

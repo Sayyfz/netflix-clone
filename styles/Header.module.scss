@@ -19,14 +19,15 @@
 }
 
 
-
 .navbarNav {
+
     a {
         font-size: 0.875rem;
         color: rgb(229, 229, 229);
         transition: 0.3s ease;
         &.active {
             color: white!important;
+            display: none!important;
         }
 
         &:hover {

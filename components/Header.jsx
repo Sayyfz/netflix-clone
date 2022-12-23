@@ -1,10 +1,23 @@
 import styles from '../styles/Header.module.scss';
 import { SearchIcon, BellIcon  } from '@heroicons/react/solid';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Header = () => {
 
+    const navLinks = [useRef(), useRef(), useRef(), useRef(), useRef()];
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const navLinkOnClick = (linkNode) => {
+        // make this one active and every other link inactive
+        navLinks.map(link => {
+            if (link.current != linkNode)
+                link.current.classList.remove("active");
+            else {
+                link.current.classList.add("active");
+            }
+        });
+        
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,6 +33,7 @@ const Header = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
+
     }, []);
 
     return (  
@@ -36,12 +50,12 @@ const Header = () => {
                     Browse
                 </button>
                 <div className={`${styles.navbarCollapse} collapse navbar-collapse ms-md-5`} id="navbarNavAltMarkup">
-                    <div className={`navbar-nav ${styles.navbarNav} align-items-center`}>
-                        <a className="nav-link active" aria-current="page" href="#">Home</a>
-                        <a className="nav-link" href="#">TV Shows</a>
-                        <a className="nav-link" href="#">Movies</a>
-                        <a className="nav-link" href="#">New & Popular</a>
-                        <a className="nav-link" href="#">My List</a>
+                    <div className={`navbar-nav navLinks ${styles.navbarNav} align-items-center`}>
+                        <a onClick={() => navLinkOnClick(navLinks[0].current)} ref={navLinks[0]} className={`nav-link active`} aria-current="page" href="#">Home</a>
+                        <a onClick={() => navLinkOnClick(navLinks[1].current)} ref={navLinks[1]} className="nav-link" href="#">TV Shows</a>
+                        <a onClick={() => navLinkOnClick(navLinks[2].current)} ref={navLinks[2]} className="nav-link" href="#">Movies</a>
+                        <a onClick={() => navLinkOnClick(navLinks[3].current)} ref={navLinks[3]} className="nav-link" href="#">New & Popular</a>
+                        <a onClick={() => navLinkOnClick(navLinks[4].current)} ref={navLinks[4]} className="nav-link" href="#">My List</a>
                     </div>
                 </div>
                 <div className={`${styles.navIcons} position-absolute`}>

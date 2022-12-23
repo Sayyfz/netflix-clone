@@ -2,15 +2,28 @@ import { useEffect, useState } from 'react';
 import requests from '../utils/requests'
 import Banner from '../components/Banner.jsx';
 import axios from 'axios';
+import Head from 'next/head';
 import styles from '../styles/Home.module.scss'
+import Row from '../components/Row';
 
-export default function Home({ netflixOriginals }) {
+export default function Home({ netflixOriginals, actionMovies, comedyMovies, documentaries, horrorMovies, romanceMovies, topRated, trendingNow }) {
   
-
-
   return (
-    <div className={` ${styles.homeWrapper}`}>
-      <Banner netflixOriginals={netflixOriginals} />
+    <div className=''>
+      <Head>
+        <title>Home - Netflix</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className={` ${styles.homeWrapper}`}>
+        <Banner netflixOriginals={netflixOriginals} />
+
+        <section>
+          <Row />
+          <Row />
+          <Row />
+          <Row />
+        </section>
+      </main>
     </div>
   )
 };

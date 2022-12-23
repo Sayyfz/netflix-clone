@@ -20,13 +20,13 @@
     .mbtn-#{$input-clr}:hover {
         @if $input-clr == accent {
             filter: drop-shadow(
-            (-$shadow-intensity / 2) ($shadow-intensity / 2)
+            0 ($shadow-intensity / 2)
             $shadow-intensity 
             $clr-accent) ;
         }
         @else if $input-clr == extra {
             filter: drop-shadow(
-            (-$shadow-intensity / 2) ($shadow-intensity / 2)
+            0 ($shadow-intensity / 2)
             $shadow-intensity 
             $clr-extra) ;
         }

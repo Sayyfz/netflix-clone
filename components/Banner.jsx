@@ -7,20 +7,24 @@ import { baseUrl } from "../constants/movie";
 const Banner = ({ netflixOriginals }) => {
     const [bannerMovie, setBannerMovie] = useState(null);
 
-    const randomMovieIndex = Math.floor(Math.random() * netflixOriginals.length);
     useEffect(() => {
+        const randomMovieIndex = Math.floor(Math.random() * netflixOriginals.length);
         setBannerMovie(netflixOriginals[randomMovieIndex]);
     }, [])
 
     return (  
     <div className={`${styles.banner} position-relative`}>
-        <Image
-            className={`${styles.bannerImg}`}
-            fill
-            style={{objectFit: 'cover'}}
-            src={`${baseUrl}${bannerMovie?.backdrop_path || bannerMovie?.poster_path}`}
-            alt='Banner Image'
-        />
+        {
+            bannerMovie && 
+            <Image
+                className={`${styles.bannerImg}`}
+                fill
+                style={{objectFit: 'cover'}}
+                src={`${baseUrl}${bannerMovie?.backdrop_path || bannerMovie?.poster_path }`}
+                alt='Banner Image'
+            />
+        }
+        
         <div className={`${styles.bannerItems} ${styles.container} mcontainer d-flex flex-column w-100`}>
             <div className={`${styles.bannerMovieInfo}`}>
                 <StarIcon className={`${styles.bannerMovieRatingIcon} me-1`} />
@@ -29,7 +33,7 @@ const Banner = ({ netflixOriginals }) => {
                 </span>
                 <span className={`seperator mx-3`}> </span>
                 <span className={`${styles.bannerMovieDate}`}>
-                    { new Date(bannerMovie?.release_date).getFullYear() }
+                    { bannerMovie? new Date(bannerMovie.release_date).getFullYear() : null }
                 </span>
             </div>
 

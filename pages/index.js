@@ -5,26 +5,33 @@ import axios from 'axios';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss'
 import Row from '../components/Row';
+import { createContext } from 'react';
 
-export default function Home({ netflixOriginals, actionMovies, comedyMovies, documentaries, horrorMovies, romanceMovies, topRated, trendingNow }) {
+export const MContext = createContext([]);
+
+export default function Home(props) {
+
+  const [movies, setMovies] = useState(props);
 
   return (
-    <div className=''>
-      <Head>
-        <title>Home - Netflix</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={` ${styles.homeWrapper}`}>
-        <Banner netflixOriginals={netflixOriginals} />
+    <MContext.Provider value={movies}>
+      <div className=''>
+        <Head>
+          <title>Home - Netflix</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <main className={` ${styles.homeWrapper}`}>
+          <Banner/>
 
-        <section>
-          <Row />
-          <Row />
-          <Row />
-          <Row />
-        </section>
-      </main>
-    </div>
+          <section>
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+          </section>
+        </main>
+      </div>
+    </MContext.Provider>
   )
 };
 

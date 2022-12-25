@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import styles from '../styles/Banner.module.scss'
 import Image from 'next/image';
 import { StarIcon, PlayIcon, InformationCircleIcon } from '@heroicons/react/solid';
 import { baseUrl } from "../constants/movie";
+import { MContext } from "../pages";
 
-const Banner = ({ netflixOriginals }) => {
+const Banner = () => {
     const [bannerMovie, setBannerMovie] = useState(null);
-
+    const { netflixOriginals } = useContext(MContext);
+    
     useEffect(() => {
-        const randomMovieIndex = Math.floor(Math.random() * netflixOriginals.length);
+        const randomMovieIndex = Math.floor(Math.random() * netflixOriginals?.length);
         setBannerMovie(netflixOriginals[randomMovieIndex]);
     }, [])
 

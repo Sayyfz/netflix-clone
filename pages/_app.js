@@ -4,7 +4,9 @@ import { MContext } from '../constants/Context.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import '../styles/globals.scss';
+import { Provider } from 'react-redux';
 import { useEffect } from 'react';
+import store from '../redux/store.js';
 
 
 function MyApp({ Component, pageProps }) {
@@ -13,14 +15,12 @@ function MyApp({ Component, pageProps }) {
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
-  const lol = 'seif'
-  const lmao = 'ezz';
   return (
-    <MContext.Provider value={{ lol, lmao }}>
+    <Provider store={store}>
       <Header />
       <Component {...pageProps} />
       {/* <Footer /> */}
-    </MContext.Provider>
+    </Provider>
   )
 }
 

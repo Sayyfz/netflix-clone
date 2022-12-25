@@ -1,16 +1,13 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import requests from '../utils/requests'
 import Banner from '../components/Banner.jsx';
 import axios from 'axios';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss'
-import { MContext } from '../constants/Context';
 import Row from '../components/Row';
 
 export default function Home({ netflixOriginals, actionMovies, comedyMovies, documentaries, horrorMovies, romanceMovies, topRated, trendingNow }) {
 
-  const { lol, lmao } = useContext(MContext);
-  
   return (
     <div className=''>
       <Head>

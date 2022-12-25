@@ -2,7 +2,7 @@ import * as actions from './movieActions.js';
 
 const initialState = {
     loading: false,
-    users: [],
+    movies: [],
     error: '',
 }
 

@@ -22,13 +22,18 @@
         .thumbnails {
             // overflow: scroll;
             overflow-x: scroll;
-            gap: 5px;
+            gap: 10px;
             position: relative;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            scrollbar-width: none;
             li {
                 min-width: 180px;
                 height: 112px;
                 cursor: pointer;
                 transition: 0.3s ease-out;
+                border-radius: 150px;
                 img {
                     object-fit: cover;
                 }
@@ -85,6 +90,17 @@
         svg {
             width: 26px!important;
             height: 26px!important;
+        }
+    }
+}
+
+
+@media(min-width: 768px) {
+    .thumbnails {
+        li {
+          &:hover {
+            scale: 1.1;
+          }  
         }
     }
 }

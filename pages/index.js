@@ -24,10 +24,16 @@ export default function Home(props) {
           <Banner/>
 
           <section>
-            <Row />
-            <Row />
-            <Row />
-            <Row />
+            <Row title="Trending Now" movies={movies.trendingNow}/>
+            <Row title="Top Rated" movies={movies.topRated}/>
+            <Row title="Action Thrillers" movies={movies.actionMovies}/>
+
+            {/* {list.length > 0 && <Row title="My List" movies={list}/>} */}
+
+            <Row title="Comedies" movies={movies.comedyMovies}/>
+            <Row title="Scary Movies" movies={movies.horrorMovies}/>
+            <Row title="Romance Movies" movies={movies.romanceMovies}/>
+            <Row title="Documentaries" movies={movies.documentaries}/>
           </section>
         </main>
       </div>

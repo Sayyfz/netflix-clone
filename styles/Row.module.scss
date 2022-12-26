@@ -1,0 +1,90 @@
+@import 'variables.scss';
+
+.row {
+    // $m-spacing: 40px;
+    // margin-right: $m-spacing;
+    // margin-left: $m-spacing;
+    .rowTitle {
+        font-family: 'semi-bold';
+        font-weight: 700;
+        color: #e5e5e5;
+        transition: 0.3s ease;
+        &:hover {
+            color: white;
+        }
+    }
+
+    
+    .slider {
+        height: 130px;
+        transition: 0.3s ease;
+
+        .thumbnails {
+            // overflow: scroll;
+            overflow-x: scroll;
+            gap: 5px;
+            position: relative;
+            li {
+                min-width: 180px;
+                height: 112px;
+                cursor: pointer;
+                transition: 0.3s ease-out;
+                img {
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &:hover svg {
+            opacity: 1;
+        }
+
+        svg {
+            top: 50%;
+            bottom: 50%;
+            width: 36px;
+            height: 36px;
+            z-index: 40;
+            cursor: pointer;
+            opacity: 0;
+            transition: 0.3s ease;
+
+            &:hover {
+                scale: 1.25;
+            }
+
+            &:first-child {
+                
+                left: 0;
+            }
+
+            &:last-child {
+                right: 5px;
+            }
+        }
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .row {
+        .slider {
+            .thumbnails {
+                li {
+                    min-width: 180px;
+                    height: 112px;
+                }
+            }
+        }
+        $m-spacing: 16px;
+        .rowTitle {
+            font-size: 16px;
+        }
+
+        svg {
+            width: 26px!important;
+            height: 26px!important;
+        }
+    }
+}

@@ -16,16 +16,18 @@ const Banner = () => {
 
     return (  
     <div className={`${styles.banner} position-relative`}>
+        <div className={`${styles.bannerImgContainer} position-absolute`}>
         {
             bannerMovie && 
             <Image
-                className={`${styles.bannerImg}`}
+                className={`${styles.bannerImg} `}
                 fill
                 style={{objectFit: 'cover'}}
                 src={`${baseUrl}${bannerMovie?.backdrop_path || bannerMovie?.poster_path }`}
                 alt='Banner Image'
             />
         }
+        </div>
         
         <div className={`${styles.bannerItems} ${styles.container} mcontainer d-flex flex-column w-100`}>
             <div className={`${styles.bannerMovieInfo}`}>

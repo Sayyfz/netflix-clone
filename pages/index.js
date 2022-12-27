@@ -23,7 +23,7 @@ export default function Home(props) {
         <main className={` ${styles.homeWrapper}`}>
           <Banner/>
 
-          <section>
+          <section className={`${styles.rows}`}>
             <Row title="Trending Now" movies={movies.trendingNow}/>
             <Row title="Top Rated" movies={movies.topRated}/>
             <Row title="Action Thrillers" movies={movies.actionMovies}/>

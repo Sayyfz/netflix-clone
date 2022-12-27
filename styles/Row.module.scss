@@ -1,5 +1,7 @@
 @import 'variables.scss';
 
+
+
 .row {
     // $m-spacing: 40px;
     // margin-right: $m-spacing;
@@ -31,7 +33,6 @@
             li {
                 min-width: 180px;
                 height: 112px;
-                cursor: pointer;
                 transition: 0.3s ease-out;
                 border-radius: 150px;
                 img {
@@ -98,6 +99,7 @@
 @media(min-width: 768px) {
     .thumbnails {
         li {
+          cursor: pointer;
           &:hover {
             scale: 1.1;
           }  

@@ -7,7 +7,8 @@ import { MContext } from "../pages";
 
 const Banner = () => {
     const [bannerMovie, setBannerMovie] = useState(null);
-    const { netflixOriginals } = useContext(MContext);
+    const context = useContext(MContext);
+    const { netflixOriginals } = context.movies;
     
     useEffect(() => {
         const randomMovieIndex = Math.floor(Math.random() * netflixOriginals?.length);

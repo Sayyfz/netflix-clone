@@ -1,7 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import styles from '../styles/Row.module.scss';
 import Thumbnail from "./Thumbnail.jsx";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 
 const Row = ({ title, movies }) => {
@@ -14,13 +14,10 @@ const Row = ({ title, movies }) => {
         if(rowRef.current) {
             const {scrollLeft, clientWidth, scrollWidth} = rowRef.current;
 
-            // Since at this point of time, the row is still not scrolled, 
             const scrollTo = direction === "left" 
             ? scrollLeft - clientWidth
             : scrollLeft + clientWidth;
             
-            console.log(scrollTo);
-            console.log(scrollLeft);
             rowRef.current.scrollTo({left: scrollTo, behavior: "smooth"});
             
             setIsMaxRight(scrollWidth - (scrollTo + clientWidth) <= 0 ? true : false);

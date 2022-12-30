@@ -6,15 +6,23 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.scss'
 import Row from '../components/Row';
 import { createContext } from 'react';
+import MovieModal from '../components/MovieModal';
 
 export const MContext = createContext([]);
 
 export default function Home(props) {
-
+  
   const [movies, setMovies] = useState(props);
+  const [modalMovie, setModalMovie] = useState({});
+
+  const setModalData = (movie) => {
+    setModalMovie(movie);
+  };
+
+
 
   return (
-    <MContext.Provider value={movies}>
+    <MContext.Provider value={{movies, setModalData}}>
       <div className=''>
         <Head>
           <title>Home - Netflix</title>
@@ -35,7 +43,10 @@ export default function Home(props) {
             <Row title="Romance Movies" movies={movies.romanceMovies}/>
             <Row title="Documentaries" movies={movies.documentaries}/>
           </section>
+          
         </main>
+        <MovieModal modalMovie={modalMovie}/>
+
       </div>
     </MContext.Provider>
   )
@@ -79,7 +90,10 @@ export const getServerSideProps = async () => {
   }),
   ]);
 
- 
+  const genres = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US`, {
+    headers: { "Accept-Encoding": "gzip,deflate,compress" }
+  });
+
   return {
     props: {
       netflixOriginals: netflixOriginals.data.results,
@@ -90,6 +104,7 @@ export const getServerSideProps = async () => {
       horrorMovies: horrorMovies.data.results,
       romanceMovies: romanceMovies.data.results,
       documentaries: documentaries.data.results,
+      genres: genres.data.genres,
     }
   }
 

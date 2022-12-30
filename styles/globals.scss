@@ -73,6 +73,54 @@ svg {
   transition: 0.2s ease;
 }
 
+.m-modal {
+
+    .modal-dialog {
+      .modal-content {
+        background-color: rgb(32, 32, 32);
+        
+        .modal-header {
+          & > .d-flex {
+            button {
+      
+
+            }
+          }
+        }
+        .modal-title {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        .genres {
+          gap: 10px;
+          flex-wrap: wrap;
+          .genre {
+            background-color: rgb(99, 99, 99);
+            border-radius: 25px;
+          }
+        }
+        .modal-body {
+          font-size: 13px;
+        }
+        .modal-footer {
+          button {
+            font-size: 12px;
+          }
+        }
+      }
+        
+    }
+}
+
+.m-modal-btn {
+  border: none;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  z-index: 101;
+  background-color: transparent
+}
+
 @include btn-shadow(accent);
 @include btn-shadow(extra);
 
@@ -86,6 +134,8 @@ svg {
   .mcontainer {
     padding: 0 1rem;
   }
+
+ 
 }
 
 @media (min-width: 768px) {
@@ -95,6 +145,22 @@ svg {
 
   .mbtn {
     padding: 0.5rem 1.5rem;
+  }
+  .modal-title {
+    font-size: 36px!important;
+  }
+  .modal-body {
+    font-size: 16px!important;
+  }
+
+  .genre {
+    font-size: 16px;
+  }
+
+  .modal-footer {
+    .btn {
+      font-size: 16px!important;
+    }
   }
 }
 

@@ -1,13 +1,13 @@
-
+import connect from "../../Database/Connection";
 
 const handler = async (req, res) => {
-    switch(req.method) {
-        case 'GET': {
-            res.status(200).json('Get req');
-        }
-        case 'POST': {
-            res.status(200).json('Post req');
-        }
+    if(req.method === 'GET') {
+        connect()
+          .then(() => console.log('connected'))
+          .catch(err => console.log(err))
+          .then(res.status(200).send('home'));
+    } else if (req.method === 'POST') {
+        res.status(200).json('Post req');
     }
 }
  

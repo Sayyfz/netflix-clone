@@ -94,6 +94,8 @@ export const getServerSideProps = async () => {
     headers: { "Accept-Encoding": "gzip,deflate,compress" }
   });
 
+  console.log(genres);
+  console.log(netflixOriginals);
   return {
     props: {
       netflixOriginals: netflixOriginals.data.results,

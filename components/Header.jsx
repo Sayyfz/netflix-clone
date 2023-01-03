@@ -39,7 +39,7 @@ const Header = () => {
     return (  
 <header className={`${styles.header} ${isScrolled && styles.headerScrolled} position-fixed w-100 d-flex`}>
     
-            <nav className={`  py-md-2 mcontainer navbar navbar-expand-md navbar-light w-100 ${styles.navbar}`}>
+            <nav className={`py-md-2 mcontainer navbar navbar-expand-md navbar-light w-100 ${styles.navbar}`}>
             <div className={`container-fluid ${styles.navbarContainer}`}>
                 <a className={`navbar-brand ${styles.navbarBrand}`} href="#">
                     <img src="https://rb.gy/ulxxee" />

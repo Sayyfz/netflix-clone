@@ -39,6 +39,7 @@ const Row = ({ title, movies }) => {
                 <ChevronRightIcon onClick={() => {handleClick("right")}} className={`icon position-absolute my-auto ${isMaxRight && 'd-none'}`} />
             </div>
         </div>
+        // 
     );
 }
  
